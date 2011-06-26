@@ -1,0 +1,2 @@
+ctags_highlighting.vba: call delete('/home/budziq/.vim/plugin/ctags_highlighting.vim')|call delete('/home/budziq/.vim/mktypes.py')|call delete('/home/budziq/.vim/extra_source/mktypes/setup.py')|call delete('/home/budziq/.vim/doc/ctags_highlighting.txt')
+colourscheme_bandit.vba: call delete('/home/budziq/.vim/colors/bandit.vim')|call delete('/home/budziq/.vim/syntax/colours_bandit.vim')|call delete('/home/budziq/.vim/ftplugin/colours_bandit.vim')

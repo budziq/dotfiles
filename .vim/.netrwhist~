@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/scratchbox/users/budziq/home/budziq/gtk-calendar-2.0'
+let g:netrw_dirhist_2='/scratchbox/users/budziq/home/budziq/gtk-calendar-2.0/tests'
+let g:netrw_dirhist_3='/scratchbox/users/budziq/home/budziq/gtk-calendar-2.0'
+let g:netrw_dirhist_4='/scratchbox/users/budziq/home/budziq/gtk-calendar-2.0/tests'
+let g:netrw_dirhist_5='/scratchbox/users/budziq/home/budziq/TW-TRACKING/.git'
+let g:netrw_dirhist_6='/scratchbox/users/budziq/home/budziq/taebaek/stk+1.0/stk'
+let g:netrw_dirhist_7='/scratchbox/users/budziq/home/budziq/taebaek/stk+1.0/stk/windows'
+let g:netrw_dirhist_8='/scratchbox/users/budziq/home/budziq/gtk-calendar-2.0/styles/kessler'
