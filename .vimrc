@@ -38,7 +38,6 @@ map <F6> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 map <Tab> :tn<CR>
 map <S-Tab> :tp<CR>
 
-set laststatus=2
 set showfulltag
 
 set tags+=~/__tags__/qt4tags
@@ -49,8 +48,10 @@ set tags+=~/tags/gstreamertags
 set completeopt=longest,menuone,preview
 let clang_complete_copen=1
 let clang_complete_macros=1
-let clang_complete_patterns=1
-
+"let clang_use_library=1
+"let clang_snippets=1
+let clang_periodic_quickfix=1
+"let clang_conceal_snippets=1
 
 au BufRead,BufNewFile *.json setfiletype=json 
 
@@ -74,9 +75,11 @@ inoremap <C-@> <C-x><C-o>
 set cursorline
 highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
+
+
 set scrolloff=3
 set laststatus=2
-let b:ws_flags = 'i'
+let b:ws_flags='i'
 "colorscheme maroloccio"
 "colorscheme molokai"
 "colorscheme two2tango"
@@ -95,7 +98,6 @@ endif
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
-  "colorscheme wombat256" 
   colorscheme molokai
   set guifont=Monaco\ 10
   set guioptions-=T
@@ -105,3 +107,10 @@ else
   colorscheme molokai
 endif
 
+" Bad whitespace
+highlight BadWhitespace ctermbg=red guibg=red
+" Display tabs at the beginning of a line in Python mode as bad.
+au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
+" OO
+" Make trailing whitespace be flagged as bad.
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /\s\+$/
