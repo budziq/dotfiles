@@ -19,9 +19,10 @@ set smartindent
 
 
 :source ~/.vim/plugin/matchit.vim
-:source ~/.vim/plugin/ShowWhitespace.vim
+":source ~/.vim/plugin/ShowWhitespace.vim
 :source ~/.vim/rope.vim
 
+:filetype on
 :filetype plugin on
 command! W :w
 command! Q :q
@@ -50,7 +51,7 @@ let clang_complete_copen=1
 let clang_complete_macros=1
 "let clang_use_library=1
 "let clang_snippets=1
-let clang_periodic_quickfix=1
+"let clang_periodic_quickfix=1
 "let clang_conceal_snippets=1
 
 au BufRead,BufNewFile *.json setfiletype=json 
@@ -63,10 +64,28 @@ autocmd FileType json set equalprg=json_reformat
 let ropevim_vim_completion=1
 "let ropevim_codeassist_maxfixes=100"
 let ropevim_enable_autoimport=1 
+let ropevim_extended_complete=1
 
 "bind the key for omnicomplete to ctrl-space"
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
+
+
+
+" --------- Rope
+" Add rope complenition
+
+function! TabWrapperRope()
+    if strpart(getline('.'), 0, col('.')-1) =~ '^\s*$'
+        return "\<Tab>"
+    else
+        return "\<C-R>=RopeCodeAssistInsertMode()\<CR>"
+    endif
+endfunction
+
+au BufRead,BufNewFile *.py,*pyw imap <Tab> <C-R>=TabWrapperRope()<CR>
+autocmd FileType python nnoremap <silent>, :call RopeShowDoc()<CR>
+
 
 "===== show cursor column and line
 ":hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
@@ -79,6 +98,8 @@ highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
 set scrolloff=3
 set laststatus=2
+set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P
+
 let b:ws_flags='i'
 "colorscheme maroloccio"
 "colorscheme molokai"
@@ -91,6 +112,8 @@ let b:ws_flags='i'
 "colorscheme dante"
 "colorscheme asu1dark"
 
+:let python_highlight_all=1
+set background=dark
 
 if &term =~ '^\(xterm\|screen\)$' && $COLORTERM == 'gnome-terminal'
     set t_Co=256
