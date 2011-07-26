@@ -59,6 +59,7 @@
 
 " History: {{{1
 "------------------------------------------------------------------------------
+" GetLatestVimScripts: 2607 1 :AutoInstall: tasklist.vim
 "
 " 1.00  Initial version.
 "
