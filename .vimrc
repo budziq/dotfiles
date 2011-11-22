@@ -98,8 +98,12 @@ highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
 set scrolloff=3
 set laststatus=2
-set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P
-
+let g:git_branch_status_nogit=""
+let g:git_branch_status_head_current=1
+let g:git_branch_status_ignore_remotes=1
+let g:git_branch_status_text=""
+"set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P
+set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P\ %#Question#%{GitBranchInfoString()}
 let b:ws_flags='i'
 "colorscheme maroloccio"
 "colorscheme molokai"
