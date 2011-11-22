@@ -49,10 +49,16 @@ set tags+=~/tags/gstreamertags
 set completeopt=longest,menuone,preview
 let clang_complete_copen=1
 let clang_complete_macros=1
+let clang_complete_auto=0
+let clang_auto_select=1
 "let clang_use_library=1
 "let clang_snippets=1
 "let clang_periodic_quickfix=1
 "let clang_conceal_snippets=1
+let clang_user_options='|| exit 0'
+"let clang_exec='/home/budziq/dev/git/clang+llvm-2.9-i686-linux/bin/clang'
+
+
 
 au BufRead,BufNewFile *.json setfiletype=json 
 
