@@ -1,0 +1,15 @@
+[user]
+	name = Michał Budzyński
+	email = m.budzynski@samsung.com
+[core]
+	editor = vim
+	pager = less -FRSX
+[color]
+	diff = auto
+	branch = auto
+	status = auto
+	interactive = auto
+[difftool]
+        prompt = false
+[difftool]
+	cmd = /home/budziq/meld_git.py
