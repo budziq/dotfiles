@@ -12,4 +12,4 @@
 [difftool]
         prompt = false
 [difftool]
-	cmd = /home/budziq/meld_git.py
+	cmd = /home/budziq/git-diff-wrapper
