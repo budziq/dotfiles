@@ -78,7 +78,10 @@ let ropevim_extended_complete=1
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
 
-
+au FileType qf call AdjustWindowHeight(3, 6)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
 
 " --------- Rope
 " Add rope complenition
@@ -137,6 +140,8 @@ if has("gui_running")
   set guifont=Monaco\ 10
   set guioptions-=T
   set spell
+  set lines=40
+  set columns=157
 else
   "colorscheme wombat"
   colorscheme molokai
