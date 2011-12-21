@@ -17,6 +17,8 @@ set autoindent
 set smartindent
 :syntax on
 
+let g:valgrind_command='export G_SLICE=always-malloc G_DEBUG=gc-friendly && valgrind'
+let g:valgrind_arguments=' --leak-check=yes --track-origins=yes --error-limit=no --suppressions=/home/budziq/dev/magister/Qt47supp.txt'
 
 :source ~/.vim/plugin/matchit.vim
 ":source ~/.vim/plugin/ShowWhitespace.vim
