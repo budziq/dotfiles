@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	pager = less -FRSX
+	excludesfile = /home/budziq/.gitignore_global
 [color]
 	diff = auto
 	branch = auto
