@@ -3,3 +3,8 @@
 *.pyc
 tags
 .ropeproject
+types_java.vim
+types_c.vim
+.hg
+.hgignore
+.hgtags
