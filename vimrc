@@ -1,12 +1,13 @@
 set nu
 set hlsearch
+set incsearch
 let $PAGER=''
 set ignorecase
 set smartcase
-set incsearch
 set nocompatible
 set mouse=a
-
+set noerrorbells
+set lazyredraw
 
 set expandtab
 set textwidth=79
@@ -21,8 +22,6 @@ let g:valgrind_command='export G_SLICE=always-malloc G_DEBUG=gc-friendly && valg
 let g:valgrind_arguments=' --leak-check=yes --track-origins=yes --error-limit=no --suppressions=/home/budziq/dev/magister/Qt47supp.txt'
 
 :source ~/.vim/plugin/matchit.vim
-":source ~/.vim/plugin/ShowWhitespace.vim
-:source ~/.vim/rope.vim
 
 :filetype on
 :filetype plugin on
@@ -49,18 +48,6 @@ set tags+=~/tags/gtktags
 set tags+=~/tags/gstreamertags
 
 set completeopt=longest,menuone,preview
-let clang_complete_copen=1
-let clang_complete_macros=1
-let clang_complete_auto=0
-let clang_auto_select=1
-"let clang_use_library=1
-"let clang_snippets=1
-"let clang_periodic_quickfix=1
-"let clang_conceal_snippets=1
-let clang_user_options='|| exit 0'
-"let clang_exec='/home/budziq/dev/git/clang+llvm-2.9-i686-linux/bin/clang'
-
-
 
 au BufRead,BufNewFile *.json setfiletype=json 
 
@@ -69,10 +56,6 @@ autocmd FileType json set equalprg=json_reformat
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 "autocmd FileType python setlocal omnifunc=pysmell#Complete
 "autocmd FileType cpp set omnifunc=cppcomplete#Complete
-let ropevim_vim_completion=1
-"let ropevim_codeassist_maxfixes=100"
-let ropevim_enable_autoimport=1 
-let ropevim_extended_complete=1
 
 "bind the key for omnicomplete to ctrl-space"
 inoremap <C-Space> <C-x><C-o>
@@ -82,20 +65,6 @@ au FileType qf call AdjustWindowHeight(3, 6)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
-
-" --------- Rope
-" Add rope complenition
-
-function! TabWrapperRope()
-    if strpart(getline('.'), 0, col('.')-1) =~ '^\s*$'
-        return "\<Tab>"
-    else
-        return "\<C-R>=RopeCodeAssistInsertMode()\<CR>"
-    endif
-endfunction
-
-au BufRead,BufNewFile *.py,*pyw imap <Tab> <C-R>=TabWrapperRope()<CR>
-autocmd FileType python nnoremap <silent>, :call RopeShowDoc()<CR>
 
 
 "===== show cursor column and line
@@ -137,7 +106,7 @@ endif
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
   colorscheme molokai
-  set guifont=Monaco\ 10
+  set guifont=Monaco\ 11
   set guioptions-=T
   set spell
   set lines=40
@@ -146,6 +115,7 @@ else
   "colorscheme wombat"
   colorscheme molokai
 endif
+
 
 " Bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
