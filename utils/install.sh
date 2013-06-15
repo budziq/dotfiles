@@ -7,7 +7,8 @@
 # shamesly modified by budziq to suit his needs 
 #
 
-dotfiles_folder=~/dotfiles
+# assign valie if none is given on command line
+dotfiles_folder=${1:-"~/dotfiles"}
 vim_folder=~/.vim
 vim_rc=~/.vimrc
 bash_rc=~/.bashrc
@@ -61,12 +62,6 @@ fi
 
 # TODO add linking of git related stuff (global_gitignore gitconfig)
 # TODO make selector for work and private gitconfig
-
-# check if git is installed
-hash git >/dev/null && /usr/bin/env git clone git://github.com/budziq/dotfiles.git $dotfiles_folder || {
-  echo "sorry, git is not installed in this machine."
-  exit
-}
 
 # make symbolic links
 ln -s $dotfiles_folder/vimrc $vim_rc
