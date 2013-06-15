@@ -30,8 +30,44 @@ let g:valgrind_arguments=' --leak-check=yes --track-origins=yes --error-limit=no
 
 :source ~/.vim/plugin/matchit.vim
 
-:filetype on
-:filetype plugin on
+" {{{ vundle bundles
+" both required for vundle
+filetype off 
+set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" git support - original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+
+Bundle 'Lokaltog/vim-powerline'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+
+filetype plugin indent on     " Required by Vundle
+    "
+    " Brief help
+    " :BundleList          - list configured bundles
+    " :BundleInstall(!)    - install(update) bundles
+    " :BundleSearch(!) foo - search(or refresh cache first) for foo
+    " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+    "
+    " see :h vundle for more details or wiki for FAQ
+    " NOTE: comments after Bundle command are not allowed..
+    "
+    " for bundle install
+    "     vim +BundleInstall +qall
+    " for clean bundle install/reinstall
+    "     vim +BundleClean +BundleInstall! +qa
+    "
+"}}} 
 
 " Save and quit also on capitals like any sane person 
 command! W :w
