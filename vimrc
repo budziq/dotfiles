@@ -6,8 +6,11 @@ set ignorecase
 set smartcase
 set nocompatible
 set mouse=a
-set noerrorbells
 set lazyredraw
+
+" no sounds please
+set noerrorbells
+set novisualbell
 
 set expandtab
 set textwidth=79
@@ -29,6 +32,8 @@ let g:valgrind_arguments=' --leak-check=yes --track-origins=yes --error-limit=no
 
 :filetype on
 :filetype plugin on
+
+" Save and quit also on capitals like any sane person 
 command! W :w
 command! Q :q
 
@@ -39,8 +44,8 @@ map <leader>p "+gP
 
 map T :TlistToggle<CR>
 map F :NERDTreeToggle<CR>
+" generate ctags for c++ code
 map <F6> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
-"map <C-F6> :!ctags -R --python --fields=+iaS --extra=+q .<CR>
 map <Tab> :tn<CR>
 map <S-Tab> :tp<CR>
 
@@ -57,9 +62,6 @@ au BufRead,BufNewFile *.json setfiletype=json
 
 autocmd FileType json set equalprg=json_reformat
 
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType python setlocal omnifunc=pysmell#Complete
-"autocmd FileType cpp set omnifunc=cppcomplete#Complete
 
 "bind the key for omnicomplete to ctrl-space"
 inoremap <C-Space> <C-x><C-o>
@@ -72,9 +74,6 @@ endfunction
 
 
 "===== show cursor column and line
-":hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-":hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-":nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 set cursorline
 highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
@@ -89,16 +88,6 @@ let g:git_branch_status_text=""
 "set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P
 set statusline=%<%f%m%r%y%=%b\ 0x%B\ \ %l,%c%V\ %P\ %#Question#%{GitBranchInfoString()}
 let b:ws_flags='i'
-"colorscheme maroloccio"
-"colorscheme molokai"
-"colorscheme two2tango"
-"colorscheme mustang"
-"colorscheme lettuce"
-"colorscheme inkpot"
-"colorscheme earendel"
-"colorscheme darkspectrum"
-"colorscheme dante"
-"colorscheme asu1dark"
 
 :let python_highlight_all=1
 set background=dark
@@ -114,7 +103,6 @@ if has("gui_running")
   set lines=40
   set columns=157
 else
-  "colorscheme wombat"
   colorscheme molokai
 endif
 
@@ -123,6 +111,5 @@ endif
 highlight BadWhitespace ctermbg=red guibg=red
 " Display tabs at the beginning of a line in Python mode as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-" OO
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /\s\+$/
