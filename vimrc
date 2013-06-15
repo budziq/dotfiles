@@ -103,9 +103,7 @@ let b:ws_flags='i'
 :let python_highlight_all=1
 set background=dark
 
-if &term =~ '^\(xterm\|screen\)$' && $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
+set t_Co=256
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")

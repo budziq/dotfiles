@@ -63,7 +63,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1;
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWSTASHSTATE=1
 
-export PS1='\[\033[01;30m\]\A \[\033[33m\] \w\[\033[36m\]\[\033[01;34m\]$(__git_ps1 " (%s)")\$\[\033[00m\] '
+export PS1='\[\e]0;\u@\h: \w\a\]\[\033[01;30m\]\A \[\033[31m\] \w\[\033[01;33m\]$(__git_ps1 "(%s)")\[\033[01;30m\]\$\[\033[00m\] '
 
 
 # If this is an xterm set the title to user@host:dir
