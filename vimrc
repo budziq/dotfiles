@@ -16,6 +16,10 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+" make backspace behave sanely
+set backspace=indent,eol,start
+" remove automatic insertion of newline
+set formatoptions-=t
 :syntax on
 
 let g:valgrind_command='export G_SLICE=always-malloc G_DEBUG=gc-friendly && valgrind'
