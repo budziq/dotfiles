@@ -58,11 +58,6 @@ set tags+=~/tags/gstreamertags
 
 set completeopt=longest,menuone,preview
 
-au BufRead,BufNewFile *.json setfiletype=json 
-
-autocmd FileType json set equalprg=json_reformat
-
-
 "bind the key for omnicomplete to ctrl-space"
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-x><C-o>
