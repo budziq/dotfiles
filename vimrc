@@ -58,6 +58,12 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 
 " --- Interesting plugins/bindles to be verified
 "Bundle 'Rip-Rip/clang_complete'
+Bundle 'clang-complete'
+let clang_complete_copen=1
+let clang_complete_macros=1
+let clang_complete_auto=0
+let clang_use_library=1
+let clang_user_options='|| exit 0'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'ZoomWin'
