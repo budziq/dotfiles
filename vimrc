@@ -53,6 +53,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+let g:syntastic_disabled_filetypes=['vim']
 
 " --- Interesting plugins/bindles to be verified
 "Bundle 'Rip-Rip/clang_complete'
