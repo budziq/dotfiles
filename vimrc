@@ -54,6 +54,7 @@ Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
+Bundle 'octol/vim-cpp-enhanced-highlight'
 
 " --- Interesting plugins/bindles to be verified
 "Bundle 'Rip-Rip/clang_complete'
