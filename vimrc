@@ -47,6 +47,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 
 Bundle 'Lokaltog/vim-powerline'
+let g:Powerline_symbols = 'fancy'
 
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'

@@ -12,3 +12,9 @@ and install symbolic links to your *dotfiles* folder.
 For read-write access, fork this repo and do something like:
         
     git clone --recursive git@github.com:budziq/dotfiles.git ~/dotfiles && ~/dotfiles/utils/install.sh ~/dotfiles
+
+
+Toget nice status line:
+
+    cp ~/dotfiles/fonts* ~/.fonts
+    sudo fc-cache -vf
