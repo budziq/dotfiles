@@ -54,6 +54,25 @@ Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
+" --- Interesting plugins/bindles to be verified
+"Bundle 'Rip-Rip/clang_complete'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'ZoomWin'
+"Bundle 'Gundo'
+"Bundle 'IndentGuides'
+"Bundle 'kien/ctrp.vim'
+" fuzzy finder - vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+
+"Bundle 'davidhalter/jedi-vim'
+"Bundle 'gregsexton/gitv'
+"Bundle 'vim-scripts/Vdebug'
+
+" cool code completioni - causes gvim explosion :(
+"Bundle 'Valloric/YouCompleteMe'
+
 filetype plugin indent on     " Required by Vundle
     "
     " Brief help
