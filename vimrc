@@ -48,6 +48,7 @@ Bundle 'tpope/vim-git'
 
 Bundle 'Lokaltog/vim-powerline'
 
+Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
@@ -78,7 +79,7 @@ nnoremap <leader>q :q<CR>
 " Paste from clipboard
 map <leader>p "+gP
 
-map T :TlistToggle<CR>
+map T :TagbarToggle<CR>
 map F :NERDTreeToggle<CR>
 " generate ctags for c++ code
 map <F6> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
