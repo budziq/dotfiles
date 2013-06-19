@@ -92,6 +92,13 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias porucznik='ssh m.budzynski@porucznik'
+alias target="ssh root@192.168.129.3"
+alias usb="sudo ifdown usb0 && sudo ifup usb0"
+alias tlogin="sudo ifdown usb0 && sudo ifup usb0 && ssh root@192.168.129.3"
+alias fff='find ./ -type f -print0 | xargs -0 grep -l'
+alias rights='git log -p --no-color --after=`date +%Y.%m.01 -d "last month"` --before=`date +%Y.%m.01 -d "this month"` --author="budzynski"'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
