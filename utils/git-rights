@@ -1,0 +1,166 @@
+#!/usr/bin/python
+
+import os
+from subprocess import Popen, PIPE
+from datetime import date, timedelta
+import re
+from cStringIO import StringIO
+
+def get_first_day(dt, d_years=0, d_months=0):
+    y, m = dt.year + d_years, dt.month + d_months
+    a, m = divmod(m - 1, 12)
+    return date(y + a, m + 1, 1)
+
+
+def get_last_day(dt, d_years=0, d_months=0):
+    return get_first_day(dt, d_years, d_months + 1) + timedelta(-1)
+
+
+def get_commits_diff(time, author=None, git_dir=None, full_patch=False):
+
+    if not git_dir:
+        git_dir = os.getcwd()
+
+    print git_dir
+
+    DATE_FORMAT = "%Y.%m.%d"
+    after = get_last_day(time, 0, -1)
+    before = get_last_day(time, 0, 0)
+
+    popen_args = [
+        'git',
+        'log',
+        '--after=%s' % (after.strftime(DATE_FORMAT)),
+        '--before=%s' % (before.strftime(DATE_FORMAT)),
+        '--no-color',
+    ]
+
+    if(author):
+        popen_args.append('--author=%s' % (author))
+
+    if(full_patch):
+        popen_args.append('-p')
+
+    #print popen_args
+    proc = Popen(popen_args, stdout=PIPE, cwd=git_dir)
+    return proc.communicate()[0]
+
+
+class Commit:
+    HEADER_PARSE = 1
+    CONTENT_PARSE = 2
+
+    def __init__(self):
+        self.header = []
+        self.lines = []
+        self.isMatched = False
+
+    def match_comment(self, expr):
+        self.isMatched = False
+        #ommit header lines except for comment
+        for line in self.header[3:]:
+            if expr.search(line) is not None:
+                self.isMatched = True
+                break
+        return self.isMatched
+
+    def dump_to(self, file):
+        file.writelines(self.header)
+        file.writelines(self.lines)
+
+    def __str__(self):
+        out = StringIO()
+        self.dump_to(out)
+        return out.getvalue()
+
+    @staticmethod
+    def parse_data(data):
+        commit_reg = re.compile(r"^commit [0-9a-f]{40}$")
+        content_reg = re.compile(r"^diff --git a")
+
+        commits = []
+        cur_commit = None
+        parse_state = Commit.HEADER_PARSE
+
+        for line in data:
+            if commit_reg.match(line) is not None:
+                cur_commit = Commit()
+                commits.append(cur_commit)
+                parse_state = Commit.HEADER_PARSE
+            elif parse_state == Commit.HEADER_PARSE and content_reg.match(line) is not None:
+                parse_state = Commit.CONTENT_PARSE
+
+            if cur_commit is not None:
+                if parse_state == Commit.HEADER_PARSE:
+                    cur_commit.header.append(line)
+                else:
+                    cur_commit.lines.append(line)
+        return commits
+
+
+if __name__ == "__main__":
+    import sys
+    import argparse
+
+    author = None#"budzynski"
+    repo_dir = os.getcwd()
+    time = date.today()
+    time = get_first_day(time, 0, -1)
+    include_matches = False
+
+
+    parser = argparse.ArgumentParser(
+        description='''Get autors rights report from repository. Filtered by
+        date, author and regex''')
+    parser.add_argument(
+        '-e', '--exclude', action="store_false", default=True, dest="exclude",
+        help='exclude commits matched by regular expression')
+    parser.add_argument(
+        '-s', '--stdout', action="store_true", default=False, dest="use_stdout",
+        help='printout the diff cotents to stdout istead of a file')
+    parser.add_argument(
+        '-r', '--regex', metavar='RE', default=None, type=str,
+        help='regular expression for filtering commits')
+    parser.add_argument(
+        '-c', '--cwd', metavar='PATH', default=os.getcwd(), type=str,
+        help='location of the git repository. Default is CWD')
+    parser.add_argument(
+        '-d', '--dump_dir', metavar='PATH', default=os.getcwd(), type=str,
+        help='location to dump the diff files. Default is CWD')
+    parser.add_argument(
+        '-m', '--month_delta', metavar='DELTA', default=-1, type=int,
+        help='''month offset between current time and this month used to
+        establish month for which the commits will be taken''')
+
+    args = parser.parse_args()
+    print "regex:\t\t", args.regex
+    print "exclude:\t",args.exclude
+    print "use_stdout:\t",args.use_stdout
+    print "cwd:\t\t",args.cwd
+    print "dump_dir:\t",args.dump_dir
+    print "month_delta:\t",args.month_delta
+
+    exit(0)
+
+
+    raw_data = get_commits_diff(time, author, git_dir=repo_dir,full_patch=True)
+    commits = Commit.parse_data(StringIO(raw_data))
+
+    #reg = re.compile(r"\[PORTING\]", flags=re.IGNORECASE)
+    #reg = re.compile(sys.argv[1], flags=re.IGNORECASE)
+    reg = re.compile(sys.argv[1])
+
+    commits = [ c for c in commits if c.match_comment(reg) == include_matches]
+
+    #print '\n'.join( "%s" % c for c in commits)
+
+    out_fname = "%s_%s.diff" % (os.path.basename(repo_dir), time)
+    out = open(out_fname, 'w')
+    for c in commits:
+        c.dump_to(out)
+
+    out.close()
+
+    print out_fname
+    print time
+    print sys.argv
