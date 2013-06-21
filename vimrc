@@ -50,6 +50,7 @@ Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
 
 Bundle 'majutsushi/tagbar'
+let tagbar_autofocus=1
 Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
