@@ -66,8 +66,8 @@ let clang_use_library=1
 let clang_user_options='|| exit 0'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'ZoomWin'
-"Bundle 'Gundo'
+Bundle 'ZoomWin'
+Bundle 'Gundo'
 "Bundle 'IndentGuides'
 "Bundle 'kien/ctrp.vim'
 " fuzzy finder - vim-scripts repos
