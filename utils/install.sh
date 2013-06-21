@@ -8,10 +8,10 @@
 #
 
 # assign valie if none is given on command line
-dotfiles_folder=${1:-"~/dotfiles"}
-vim_folder=~/.vim
-vim_rc=~/.vimrc
-bash_rc=~/.bashrc
+dotfiles_folder=${1:-"${HOME}/dotfiles"}
+vim_folder="${HOME}/.vim"
+vim_rc="${HOME}/.vimrc"
+bash_rc="${HOME}/.bashrc"
 backup_rand=$RANDOM
 
 # detect if there's a .vim folder
