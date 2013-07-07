@@ -72,6 +72,13 @@ Bundle 'ZoomWin'
 Bundle 'Gundo'
 " cool fuzzy mru file search
 Bundle 'kien/ctrlp.vim'
+" file search based on ack-grep #sudo apt-get install ack-grep
+Bundle 'mileszs/ack.vim'
+" if ag command exists base search on ag
+if executable("ag")
+    " git clone https://github.com/ggreer/the_silver_searcher
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
 
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'gregsexton/gitv'
