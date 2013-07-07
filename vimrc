@@ -110,8 +110,9 @@ nnoremap <leader>q :q<CR>
 " Paste from clipboard
 map <leader>p "+gP
 
-map T :TagbarToggle<CR>
-map F :NERDTreeToggle<CR>
+map <leader>t :TagbarToggle<CR>
+map <leader>f :NERDTreeToggle<CR>
+map <leader>g :GundoToggle<CR>
 " generate ctags for c++ code
 map <F6> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 map <Tab> :tn<CR>
