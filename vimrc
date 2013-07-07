@@ -77,7 +77,7 @@ Bundle 'Gundo'
 "Bundle 'FuzzyFinder'
 
 "Bundle 'davidhalter/jedi-vim'
-"Bundle 'gregsexton/gitv'
+Bundle 'gregsexton/gitv'
 "Bundle 'vim-scripts/Vdebug'
 
 " cool code completioni - causes gvim explosion :(
