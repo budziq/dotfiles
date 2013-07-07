@@ -70,7 +70,8 @@ let clang_library_path=$HOME."/dotfiles/"
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'ZoomWin'
 Bundle 'Gundo'
-"Bundle 'kien/ctrp.vim'
+" cool fuzzy mru file search
+Bundle 'kien/ctrlp.vim'
 
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'gregsexton/gitv'
