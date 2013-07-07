@@ -65,6 +65,7 @@ let clang_complete_macros=1
 let clang_complete_auto=0
 let clang_use_library=1
 let clang_user_options='|| exit 0'
+let clang_library_path='$HOME/dotfiles/libclang.so'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'ZoomWin'
