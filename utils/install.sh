@@ -61,6 +61,8 @@ then
 fi
 
 # TODO add linking of git related stuff (global_gitignore gitconfig)
+# TODO add linking of tmux and zsh stuff (tmux.conf, zshrc, bash_profile)
+# TODO remove non-functional color codes
 # TODO make selector for work and private gitconfig
 
 # make symbolic links
