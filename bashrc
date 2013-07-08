@@ -88,6 +88,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+export TERM="screen-256color"
+alias tmux="tmux -2"
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
