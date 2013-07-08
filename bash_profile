@@ -1,0 +1,2 @@
+
+source /home/budziq/.bashrc
