@@ -84,6 +84,10 @@ endif
 Bundle 'gregsexton/gitv'
 "Bundle 'vim-scripts/Vdebug'
 
+" solarized colorsheme
+Bundle 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
+
 " cool code completioni - causes gvim explosion :(
 "Bundle 'Valloric/YouCompleteMe'
 
@@ -152,20 +156,20 @@ set laststatus=2
 let b:ws_flags='i'
 
 :let python_highlight_all=1
-set background=dark
 
+set background=dark
+"colorscheme molokai
+colorscheme solarized
 set t_Co=256
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
-  colorscheme molokai
   set guifont=Monaco\ 11
   set guioptions-=T
   set spell
   set lines=40
   set columns=157
-else
-  colorscheme molokai
+endif
 endif
 
 
