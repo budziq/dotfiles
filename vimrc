@@ -158,10 +158,10 @@ let b:ws_flags='i'
 
 :let python_highlight_all=1
 
+set t_Co=256
 set background=dark
 "colorscheme molokai
 colorscheme solarized
-set t_Co=256
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
