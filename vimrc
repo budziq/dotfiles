@@ -24,6 +24,7 @@ set backspace=indent,eol,start
 " remove automatic insertion of newline
 set formatoptions-=t
 :syntax on
+set encoding=utf-8
 
 let g:valgrind_command='export G_SLICE=always-malloc G_DEBUG=gc-friendly && valgrind'
 let g:valgrind_arguments=' --leak-check=yes --track-origins=yes --error-limit=no --suppressions=/home/budziq/dev/magister/Qt47supp.txt'

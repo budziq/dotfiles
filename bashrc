@@ -60,6 +60,7 @@ unset color_prompt force_color_prompt
 
 
 
+export LANG='en_US.utf8'
 # Show branch dirty state in git autocompletion script
 export GIT_PS1_SHOWDIRTYSTATE=1;
 export GIT_PS1_SHOWUNTRACKEDFILES=1
