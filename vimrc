@@ -113,9 +113,12 @@ filetype plugin indent on     " Required by Vundle
 " Save and quit also on capitals like any sane person 
 command! W :w
 command! Q :q
-
+" disable Ex mode
+:map Q <Nop>
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
+" Quit all windows on <leader>Q
+nnoremap <leader>Q :qall<CR>
 " Paste from clipboard
 map <leader>p "+gP
 
