@@ -146,10 +146,6 @@ function! AdjustWindowHeight(minheight, maxheight)
 endfunction
 
 
-"===== show cursor column and line
-set cursorline
-highlight Cursor gui=reverse guifg=NONE guibg=NONE
-
 
 
 set scrolloff=3
@@ -183,6 +179,10 @@ if $TERM =~ '^screen-256color'
     map! <Esc>OF <End>
 endif
 
+
+"===== show cursor column and line
+set cursorline
+highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
 " Bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
