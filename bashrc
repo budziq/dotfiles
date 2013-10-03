@@ -49,7 +49,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-source /etc/bash_completion.d/git
 
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
@@ -89,7 +88,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-export TERM="screen-256color"
 alias tmux="tmux -2"
 
 # some more ls aliases
