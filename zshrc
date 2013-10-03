@@ -6,9 +6,10 @@ ZSH=$HOME/dotfiles/utils/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="kolo"
-ZSH_THEME="blinks"
+#ZSH_THEME="blinks"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="dpoggi"
+ZSH_THEME="murilasso"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,11 +49,11 @@ plugins=(git python tmux)
 source $ZSH/oh-my-zsh.sh
 
 # Always work in a tmux session if tmux is installed
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
-  fi
-fi
+#if which tmux 2>&1 >/dev/null; then
+#  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+#    tmux attach -t hack || tmux new -s hack; exit
+#  fi
+#fi
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
