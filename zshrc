@@ -8,8 +8,8 @@ ZSH=$HOME/dotfiles/utils/oh-my-zsh
 #ZSH_THEME="kolo"
 #ZSH_THEME="blinks"
 #ZSH_THEME="agnoster"
-#ZSH_THEME="dpoggi"
-ZSH_THEME="murilasso"
+ZSH_THEME="dpoggi"
+#ZSH_THEME="murilasso"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -57,6 +57,5 @@ alias tmux="tmux -2"
 #    tmux attach -t hack || tmux new -s hack; exit
 #  fi
 #fi
-
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
