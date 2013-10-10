@@ -132,10 +132,9 @@ map <S-Tab> :tp<CR>
 
 set showfulltag
 
-set tags+=~/__tags__/qt4tags
-set tags+=~/tags/glibtags
-set tags+=~/tags/gtktags
-set tags+=~/tags/gstreamertags
+set tags+=~/tags/gbs_tags
+set tags+=~/tags/gst_d4_tags
+set tags+=~/tags/xvideo_d4_tags
 
 set completeopt=longest,menuone,preview
 
