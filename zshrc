@@ -49,7 +49,7 @@ plugins=(git python tmux)
 source $ZSH/oh-my-zsh.sh
 
 #force tmux to recognize 256 color terminal
-alias tmux="tmux -2"
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Always work in a tmux session if tmux is installed
 #if which tmux 2>&1 >/dev/null; then
