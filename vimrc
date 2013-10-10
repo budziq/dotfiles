@@ -52,7 +52,7 @@ let g:Powerline_symbols = 'fancy'
 
 Bundle 'majutsushi/tagbar'
 let tagbar_autofocus=1
-Bundle 'godlygeek/csapprox'
+"Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
@@ -87,7 +87,7 @@ Bundle 'gregsexton/gitv'
 
 " solarized colorsheme
 Bundle 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
 
 " cool code completioni - causes gvim explosion :(
 "Bundle 'Valloric/YouCompleteMe'
