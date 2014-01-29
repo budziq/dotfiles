@@ -50,6 +50,14 @@ source $ZSH/oh-my-zsh.sh
 
 #force tmux to recognize 256 color terminal
 alias tmux="TERM=screen-256color-bce tmux"
+export DOTFILES=$HOME/dotfiles
+
+
+precmd() {
+  if [[ -n "$TMUX" ]]; then
+    tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
+  fi
+}
 
 # Always work in a tmux session if tmux is installed
 #if which tmux 2>&1 >/dev/null; then
