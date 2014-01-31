@@ -12,6 +12,8 @@ dotfiles_folder=${1:-"${HOME}/dotfiles"}
 vim_folder="${HOME}/.vim"
 vim_rc="${HOME}/.vimrc"
 bash_rc="${HOME}/.bashrc"
+zsh_rc="${HOME}/.zshrc"
+tmux_conf="${HOME}/.tmux.conf"
 backup_rand=$RANDOM
 
 # detect if there's a .vim folder
@@ -69,6 +71,8 @@ fi
 ln -s $dotfiles_folder/vimrc $vim_rc
 ln -s $dotfiles_folder/bashrc $bash_rc
 ln -s $dotfiles_folder/vim $vim_folder
+ln -s $dotfiles_folder/tmux.conf $tmux_conf
+ln -s $dotfiles_folder/zshrc $zsh_rc
 
 # [TODO] write script to run updates 
 #cd $vim_folder
