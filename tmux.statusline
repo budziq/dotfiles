@@ -2,5 +2,4 @@
 set -ue
 
 cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
-printf " #[fg=colour4]%s" "$(pwd)"
 printf " #[fg=black] #[bg=colour2]$(vcprompt -t 500 -f '[%b:%u%m] %n(%r)')"
