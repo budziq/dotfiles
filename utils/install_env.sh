@@ -7,7 +7,7 @@ sudo apt-get -q -y update
 PKGS="  vim vim-gnome"
 PKGS+=" git mercurial subversion" 
 PKGS+=" git-gui gitk meld"
-PKGS+=" cmake build-essential"
+PKGS+=" cmake build-essential autotools-dev autoconf"
 PKGS+=" checkinstall"
 PKGS+=" tmux zsh xsel xclip guake"
 PKGS+=" exuberant-ctags cscope"
