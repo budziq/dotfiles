@@ -49,7 +49,7 @@ plugins=(git python tmux)
 source $ZSH/oh-my-zsh.sh
 
 #force tmux to recognize 256 color terminal
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="TERM=screen-256color-bce tmux -2"
 export DOTFILES=$HOME/dotfiles
 
 
