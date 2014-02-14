@@ -60,14 +60,6 @@ let g:syntastic_disabled_filetypes=['vim']
 "Bundle 'octol/vim-cpp-enhanced-highlight'
 
 " --- Interesting plugins/bindles to be verified
-"Bundle 'Rip-Rip/clang_complete'
-Bundle 'clang-complete'
-let clang_complete_copen=1
-let clang_complete_macros=1
-let clang_complete_auto=0
-let clang_use_library=1
-let clang_user_options='|| exit 0'
-let clang_library_path=$HOME."/dotfiles/"
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'ZoomWin'
@@ -91,7 +83,8 @@ Bundle 'altercation/vim-colors-solarized'
 "let g:solarized_termcolors=256
 
 " cool code completioni - causes gvim explosion :(
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 
 filetype plugin indent on     " Required by Vundle
     "
