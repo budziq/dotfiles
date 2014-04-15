@@ -82,10 +82,7 @@ endif
 Bundle 'gregsexton/gitv'
 "Bundle 'vim-scripts/Vdebug'
 
-" solarized colorsheme
-Bundle 'altercation/vim-colors-solarized'
-"let g:solarized_termcolors=256
-
+Bundle 'chriskempson/base16-vim'
 " cool code completioni - causes gvim explosion :(
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
@@ -157,7 +154,6 @@ let b:ws_flags='i'
 set t_Co=256
 set background=dark
 "colorscheme molokai
-colorscheme solarized
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
@@ -190,3 +186,9 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /\s\+$/
+
+
+
+let base16colorspace=256  " Access colors present in 256 colorspace
+color base16-monokai
+"color base16-tomorrow
