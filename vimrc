@@ -86,6 +86,8 @@ Bundle 'chriskempson/base16-vim'
 " cool code completioni - causes gvim explosion :(
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 0
 
 filetype plugin indent on     " Required by Vundle
     "
