@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
 set -ue
 
-cd "$(tmux showenv "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
-printf " #[fg=black] #[bg=colour2]$(vcprompt -t 500 -f '[%b:%u%m] %n(%r)')"
+cd "$(tmux showenv | grep "$(tmux display -p "TMUX_PWD_#D")" | cut -d= -f2-)"
+printf " #[fg=colour235] #[bg=colour2]$(vcprompt -t 500 -f '[%b:%m] %n(%r)')"
