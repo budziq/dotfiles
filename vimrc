@@ -57,7 +57,11 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
-"Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle 'octol/vim-cpp-enhanced-highlight'
+
+"Bundle 'hdima/python-syntax'
+
+Bundle 'vim-scripts/python.vim--Vasiliev'
 
 " --- Interesting plugins/bindles to be verified
 "Bundle 'Lokaltog/vim-easymotion'
