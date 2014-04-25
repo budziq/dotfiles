@@ -88,6 +88,7 @@ Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on     " Required by Vundle
     "
