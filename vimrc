@@ -54,7 +54,7 @@ Bundle 'majutsushi/tagbar'
 let tagbar_autofocus=1
 "Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
+Bundle 'tomtom/tcomment_vim'
 Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
 Bundle 'octol/vim-cpp-enhanced-highlight'
