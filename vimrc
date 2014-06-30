@@ -75,6 +75,14 @@ Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
+" add snippets completion
+Bundle 'SirVer/ultisnips'
+" snippets repository
+Bundle 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger="<c-j>"
+" auto insert pair delimiters like braces or quotes
+Bundle 'Raimondi/delimitMate'
+let delimitMate_expand_cr = 1
 Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on     " Required by Vundle
