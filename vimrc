@@ -111,7 +111,7 @@ map <leader>t :TagbarToggle<CR>
 map <leader>f :NERDTreeToggle<CR>
 map <leader>g :GundoToggle<CR>
 " generate ctags for c++ code
-map <F6> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+map <F6> :!ctags-exuberant -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 map <Tab> :tn<CR>
 map <S-Tab> :tp<CR>
 
