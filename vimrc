@@ -1,7 +1,6 @@
 set nu
 set hlsearch
 set incsearch
-let $PAGER=''
 set ignorecase
 set smartcase
 set nocompatible
@@ -84,6 +83,8 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 Bundle 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
 Bundle 'airblade/vim-gitgutter'
+
+Bundle 'rkitover/vimpager'
 
 filetype plugin indent on     " Required by Vundle
     "

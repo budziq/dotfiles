@@ -76,3 +76,6 @@ BASE16_SHELL="$HOME/dotfiles/utils/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PAGER=$HOME/.vim/bundle/vimpager/vimpager
+alias less=$PAGER
+alias zless=$PAGER
