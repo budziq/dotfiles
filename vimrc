@@ -83,6 +83,8 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 Bundle 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
 Bundle 'airblade/vim-gitgutter'
+Bundle 'Yggdroot/indentLine'
+Bundle 'bronson/vim-trailing-whitespace'
 
 Bundle 'rkitover/vimpager'
 
