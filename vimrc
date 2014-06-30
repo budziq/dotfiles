@@ -6,7 +6,6 @@ set ignorecase
 set smartcase
 set nocompatible
 set mouse=a
-set lazyredraw
 
 " no sounds please
 set noerrorbells
@@ -122,7 +121,7 @@ set tags+=~/tags/gbs_tags
 set tags+=~/tags/gst_d4_tags
 set tags+=~/tags/xvideo_d4_tags
 
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone
 
 "bind the key for omnicomplete to ctrl-space"
 inoremap <C-Space> <C-x><C-o>
