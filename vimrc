@@ -26,19 +26,14 @@ set formatoptions-=t
 :syntax on
 set encoding=utf-8
 
-let g:valgrind_command='export G_SLICE=always-malloc G_DEBUG=gc-friendly && valgrind'
-let g:valgrind_arguments=' --leak-check=yes --track-origins=yes --error-limit=no --suppressions=/home/budziq/dev/magister/Qt47supp.txt'
-
-:source ~/.vim/plugin/matchit.vim
-
 " {{{ vundle bundles
 " both required for vundle
-filetype off 
+filetype off
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
@@ -63,10 +58,6 @@ Bundle 'octol/vim-cpp-enhanced-highlight'
 
 Bundle 'vim-scripts/python.vim--Vasiliev'
 
-" --- Interesting plugins/bindles to be verified
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'ZoomWin'
 Bundle 'Gundo'
 " cool fuzzy mru file search
 Bundle 'kien/ctrlp.vim'
@@ -80,10 +71,7 @@ endif
 
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'gregsexton/gitv'
-"Bundle 'vim-scripts/Vdebug'
-
 Bundle 'chriskempson/base16-vim'
-" cool code completioni - causes gvim explosion :(
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -106,9 +94,9 @@ filetype plugin indent on     " Required by Vundle
     " for clean bundle install/reinstall
     "     vim +BundleClean +BundleInstall! +qa
     "
-"}}} 
+"}}}
 
-" Save and quit also on capitals like any sane person 
+" Save and quit also on capitals like any sane person
 command! W :w
 command! Q :q
 " disable Ex mode
@@ -189,8 +177,6 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /\s\+$/
-
-
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 color base16-monokai
