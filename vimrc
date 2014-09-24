@@ -48,6 +48,7 @@ let tagbar_autofocus=1
 "Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
+let g:NERDTreeDirArrows = 1
 Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
 Bundle 'octol/vim-cpp-enhanced-highlight'
@@ -88,6 +89,9 @@ Bundle 'bronson/vim-trailing-whitespace'
 
 Bundle 'rkitover/vimpager'
 
+"Plugin 'brookhong/cscope.vim'
+Plugin 'cscope_macros.vim'
+
 filetype plugin indent on     " Required by Vundle
     "
     " Brief help
@@ -123,6 +127,9 @@ map <leader>f :NERDTreeToggle<CR>
 map <leader>g :GundoToggle<CR>
 " generate ctags for c++ code
 map <F6> :!ctags-exuberant -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
+  \:!cscope -b -i cscope.files -f cscope.out<CR>
+  \:cs reset<CR>
 map <Tab> :tn<CR>
 map <S-Tab> :tp<CR>
 
