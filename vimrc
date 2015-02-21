@@ -150,7 +150,8 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
-
+" we do not want line numbering when displaying man pages - it breaks display
+au Filetype man set nonumber
 
 
 set scrolloff=3
