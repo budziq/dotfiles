@@ -79,3 +79,7 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 export PAGER=$HOME/.vim/bundle/vimpager/vimpager
 alias less=$PAGER
 alias zless=$PAGER
+
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
