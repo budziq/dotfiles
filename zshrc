@@ -10,7 +10,7 @@ ZSH=$HOME/dotfiles/utils/oh-my-zsh
 #ZSH_THEME="agnoster"
 ZSH_THEME="dpoggi"
 #ZSH_THEME="murilasso"
-
+setopt rmstarsilent
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
