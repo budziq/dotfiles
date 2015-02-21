@@ -79,6 +79,10 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 export PAGER=$HOME/.vim/bundle/vimpager/vimpager
 alias less=$PAGER
 alias zless=$PAGER
+alias w_color="perl -pe 's/warn.*/\e[0m\e[1;45m$&\e[0m/i'"
+alias e_color="perl -pe 's/error.*/\e[0m\e[1;41m$&\e[0m/i'"
+alias f_color="perl -pe 's/fail.*/\e[0m\e[1;31m$&\e[0m/i'"
+alias err='w_color | e_color | f_color'
 
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
