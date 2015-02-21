@@ -198,4 +198,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 color base16-monokai
-"color base16-tomorrow
+
+" load local non versioned vimrc if available
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
