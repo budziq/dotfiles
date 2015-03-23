@@ -24,6 +24,10 @@ set formatoptions-=t
 :syntax on
 set encoding=utf-8
 
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
+
 " {{{ vundle bundles
 " both required for vundle
 filetype off
