@@ -94,6 +94,7 @@ alias e_color="perl -pe 's/error.*/\e[0m\e[1;41m$&\e[0m/i'"
 alias f_color="perl -pe 's/fail.*/\e[0m\e[1;31m$&\e[0m/i'"
 alias err='w_color | e_color | f_color'
 
-if [ -f ~/.zshrc.local ]; then
+# import local settings if they exist
+if [[ -e ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
