@@ -1,7 +1,14 @@
-*.swp
+.lock*
+cscope.*
+swp.*
+swo.*
+.waf*
+swo.*
 *.swo
-*.pyc
+*.swp
+build/*
 tags
+*.pyc
 .ropeproject
 types_java.vim
 types_c.vim

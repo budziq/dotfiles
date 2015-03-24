@@ -1,16 +1,15 @@
-[user]
-	name = Michał Budzyński
-	email = m.budzynski@samsung.com
 [core]
 	editor = vim
-	pager = less -FRSX
-	excludesfile = /home/budziq/.gitignore_global
+	excludesfile = ~/.gitignore.global
 [color]
+	bransh = auto
 	diff = auto
-	branch = auto
 	status = auto
-	interactive = auto
-[difftool]
-        prompt = false
-[difftool]
-	cmd = /home/budziq/git-diff-wrapper
+[merge]
+	tool = vimdiff
+[push]
+	default = simple
+[diff]
+    tool = meld
+[include]
+    path = ~/.gitconfig.local
