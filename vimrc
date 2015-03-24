@@ -89,6 +89,10 @@ Bundle 'rkitover/vimpager'
 "Plugin 'brookhong/cscope.vim'
 Plugin 'cscope_macros.vim'
 
+" Colorschemes
+Plugin 'morhetz/gruvbox'
+Plugin 'w0ng/vim-hybrid'
+
 filetype plugin indent on     " Required by Vundle
     "
     " Brief help
@@ -159,11 +163,12 @@ let b:ws_flags='i'
 
 set t_Co=256
 set background=dark
-"colorscheme molokai
+"color gruvbox
+color hybrid
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
-  set guifont=Monaco\ 11
+  set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
   set guioptions-=T
   set spell
   set lines=40
