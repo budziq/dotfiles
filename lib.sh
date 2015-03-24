@@ -99,17 +99,20 @@ function require_gem() {
 
 function symlinkifne {
     running "$1"
+    if [[ -h $1 ]]; then
+        #it is a link to somewhere so just remove it
+        unlink $1
+    fi
+
+    # file exists
     if [[ -e $1 ]]; then
-        # file exists
-        if [[ -L $1 ]]; then
-        # it's already a simlink (could have come from this project)
-            echo -en '\tsimlink exists, skipped\t';ok
-            return
-        fi
         # backup file does not exist yet
         if [[ ! -e ~/.dotfiles_backup/$1 ]];then
             mv $1 ~/.dotfiles_backup/
-            echo -en 'backed up saved...';
+            echo -en 'backup saved...';
+        else
+            warn "$1 and its backup already exist. Skipping..."
+            return
         fi
     fi
     # create the link
@@ -117,6 +120,14 @@ function symlinkifne {
     if [[ $? != 0 ]]; then
         error "failed to install $1! aborting..."
     fi
+
+    if ! [ -e $1 ]; then
+        # linkes file does not exist
+        error "$1 link target does not exist"
+    else
+        # linked successfully and file exists
         echo -en 'linked';ok
+    fi
+
 }
 
