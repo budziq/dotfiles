@@ -32,7 +32,9 @@ bot "seting-up python pip..."
     #run cat /etc/shadow
     srun easy_install pip
 bot "installing python pip packages..."
-#require_pip
+    require_pip pep8
+    require_pip nose
+    require_pip virtualenv
 bot "misc package setup..."
 # setup guake colors and settings
 #./local.sh
