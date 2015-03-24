@@ -57,10 +57,6 @@ Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
 Bundle 'octol/vim-cpp-enhanced-highlight'
 
-"Bundle 'hdima/python-syntax'
-
-Bundle 'vim-scripts/python.vim--Vasiliev'
-
 Bundle 'Gundo'
 " cool fuzzy mru file search
 Bundle 'kien/ctrlp.vim'
@@ -74,7 +70,6 @@ endif
 
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'gregsexton/gitv'
-Bundle 'chriskempson/base16-vim'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -84,9 +79,7 @@ Bundle 'SirVer/ultisnips'
 " snippets repository
 Bundle 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-j>"
-" auto insert pair delimiters like braces or quotes
-Bundle 'Raimondi/delimitMate'
-let delimitMate_expand_cr = 1
+
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'bronson/vim-trailing-whitespace'
@@ -199,9 +192,6 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /\s\+$/
-
-let base16colorspace=256  " Access colors present in 256 colorspace
-color base16-monokai
 
 " load local non versioned vimrc if available
 if filereadable(glob("~/.vimrc.local"))
