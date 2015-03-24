@@ -68,12 +68,6 @@ if [ "$TMUX" = "" ]; then
   fi
 fi
 
-# Base16 Shell
-BASE16_SCHEME="monokai"
-#BASE16_SCHEME="railscasts"
-BASE16_SHELL="$HOME/dotfiles/utils/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 export PAGER=$HOME/.vim/bundle/vimpager/vimpager
