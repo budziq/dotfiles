@@ -24,11 +24,13 @@ sudo -v
 bot "installing apt packages..."
 require_apt guake
 require_apt vim
-require_apt sl
+require_apt python-setuptools
 require_apt gitk
 require_apt git
 #require_apt not_exist
-
+bot "seting-up python pip..."
+    #run cat /etc/shadow
+    srun easy_install pip
 bot "installing python pip packages..."
 #require_pip
 bot "misc package setup..."

@@ -56,6 +56,23 @@ function require_apt() {
     ok
 }
 
+function run() {
+    running "do"; printf '%s ' ${@}
+    "$@" > /dev/null 2>&1
+    if [[ $? != 0 ]]; then
+        error "failed to run $@! aborting..."
+    fi
+    ok
+}
+
+function srun() {
+    running "$COL_MAGENTA""sudo""$COL_RESET"; printf '%s ' ${@}
+    sudo "$@" > /dev/null 2>&1
+    if [[ $? != 0 ]]; then
+        error "failed to run $@! aborting..."
+    fi
+    ok
+}
 function require_gem() {
     running "gem $1"
     if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) != $1 ]];
