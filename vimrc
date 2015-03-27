@@ -163,8 +163,8 @@ let b:ws_flags='i'
 
 set t_Co=256
 set background=dark
-"color gruvbox
-color hybrid
+color gruvbox
+"color hybrid
 
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
