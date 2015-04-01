@@ -76,11 +76,11 @@ alias zless=$PAGER
 
 # 't' the todo manager
 alias t='python ~/bin/t/t.py --task-dir ~/tasks --list tasks'
-alias tt='t -- -:'
-alias d="t '/^.:/_:/' -e"
-alias b="t '/^.:/-:/' -e"
-alias w="t '/^.:/+:/' -e"
-alias n="t '/^.:/=:/' -e"
+alias tt='t -- :w:'
+alias d="t '/^:.:/:d:/' -e"
+alias b="t '/^:.:/:b:/' -e"
+alias w="t '/^:.:/:w:/' -e"
+alias n="t '/^:.:/:n:/' -e"
 
 # log colorizer perl oneliners
 alias w_color="perl -pe 's/warn.*/\e[0m\e[1;45m$&\e[0m/i'"
