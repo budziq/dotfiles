@@ -70,6 +70,7 @@ endif
 
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'gregsexton/gitv'
+Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
