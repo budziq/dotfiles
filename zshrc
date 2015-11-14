@@ -49,7 +49,7 @@ plugins=(git python tmux)
 source $ZSH/oh-my-zsh.sh
 
 #force tmux to recognize 256 color terminal
-alias tmux="TERM=screen-256color-bce tmux -2"
+alias tmux="tmux -2"
 export DOTFILES=$HOME/dotfiles
 
 
@@ -62,17 +62,12 @@ precmd() {
 # work in a tmux session if tmux is installed
 if [ "$TMUX" = "" ]; then
   if which tmux 2>&1 >/dev/null; then
-    if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-      tmux attach -t hack || tmux new -s hack; exit
-    fi
+    tmux attach -t hack || tmux new -s hack; exit
   fi
 fi
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-export PAGER=$HOME/.vim/bundle/vimpager/vimpager
-alias less=$PAGER
-alias zless=$PAGER
 
 # 't' the todo manager
 alias t='python ~/bin/t/t.py --task-dir ~/tasks --list tasks'

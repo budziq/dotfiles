@@ -85,8 +85,6 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'bronson/vim-trailing-whitespace'
 
-Bundle 'rkitover/vimpager'
-
 "Plugin 'brookhong/cscope.vim'
 Plugin 'cscope_macros.vim'
 
@@ -175,18 +173,6 @@ if has("gui_running")
   set lines=40
   set columns=157
 endif
-
-""""""""""""""
-" tmux fixes "
-""""""""""""""
-" Handle tmux $TERM quirks in vim
-if $TERM =~ '^screen-256color'
-    map <Esc>OH <Home>
-    map! <Esc>OH <Home>
-    map <Esc>OF <End>
-    map! <Esc>OF <End>
-endif
-
 
 "===== show cursor column and line
 set cursorline
