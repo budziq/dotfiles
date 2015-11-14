@@ -44,12 +44,13 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'zenburn'
+let g:airline_extensions = ['branch', 'syntastic', 'hunks']
 
 Bundle 'majutsushi/tagbar'
 let tagbar_autofocus=1
-"Bundle 'godlygeek/csapprox'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 let g:NERDTreeDirArrows = 1
@@ -57,35 +58,15 @@ Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
 Bundle 'octol/vim-cpp-enhanced-highlight'
 
-Bundle 'Gundo'
-" cool fuzzy mru file search
-Bundle 'kien/ctrlp.vim'
-" file search based on ack-grep #sudo apt-get install ack-grep
-Bundle 'mileszs/ack.vim'
-" if ag command exists base search on ag
-if executable("ag")
-    " git clone https://github.com/ggreer/the_silver_searcher
-    let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
-
-"Bundle 'davidhalter/jedi-vim'
-Bundle 'gregsexton/gitv'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
-" add snippets completion
-Bundle 'SirVer/ultisnips'
-" snippets repository
-Bundle 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<c-j>"
 
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Yggdroot/indentLine'
 Bundle 'bronson/vim-trailing-whitespace'
-
-"Plugin 'brookhong/cscope.vim'
 Plugin 'cscope_macros.vim'
 
 " Colorschemes
@@ -124,7 +105,6 @@ map <leader>p "+gP
 
 map <leader>t :TagbarToggle<CR>
 map <leader>f :NERDTreeToggle<CR>
-map <leader>g :GundoToggle<CR>
 " generate ctags for c++ code
 map <F6> :!ctags-exuberant -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
@@ -177,13 +157,6 @@ endif
 "===== show cursor column and line
 set cursorline
 highlight Cursor gui=reverse guifg=NONE guibg=NONE
-
-" Bad whitespace
-highlight BadWhitespace ctermbg=red guibg=red
-" Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-" Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp,*.cxx match BadWhitespace /\s\+$/
 
 " load local non versioned vimrc if available
 if filereadable(glob("~/.vimrc.local"))
