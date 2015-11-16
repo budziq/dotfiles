@@ -14,8 +14,8 @@ while [ true ]; do
     if [ "$OLD_STATE" != "$STATE" ]; then
         if [ "$STATE" == "$ACTION_STATE" ]; then
             echo "sleep 10 - reconnected display: $STATE"
-		  for T in $(seq 1 20); do
-		    if /usr/bin/xdpyinfo 1> /dev/null 2>&1; then
+		  for T in $(seq 1 50); do
+		    if su -c "DISPLAY=:0.0 /usr/bin/xdpyinfo 1> /dev/null 2>&1" odroid; then
 		      echo "1yes-$T"; break
 		    fi
 		    echo "1no-$T"; sleep 0.5
