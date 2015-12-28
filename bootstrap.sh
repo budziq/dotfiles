@@ -55,6 +55,7 @@ symlinkifne .crontab
 #symlinkifne .zprofile
 #symlinkifne .zshenv
 #symlinkifne .zshrc
+#symlinkifne .dircolors
 
 popd > /dev/null 2>&1
 

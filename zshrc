@@ -46,11 +46,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git python tmux)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 #force tmux to recognize 256 color terminal
 alias tmux="tmux -2"
-export DOTFILES=$HOME/dotfiles
+export DOTFILES="$HOME/dotfiles"
 
 
 precmd() {
@@ -64,6 +64,13 @@ if [ "$TMUX" = "" ]; then
   if which tmux 2>&1 >/dev/null; then
     tmux attach -t hack || tmux new -s hack; exit
   fi
+fi
+
+
+# enable custom color scheme in ls and completions
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b $HOME/.dircolors)" || eval "$(dircolors -b)"
+    zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
 
 # Customize to your needs...

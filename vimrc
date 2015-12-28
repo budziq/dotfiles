@@ -69,6 +69,8 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'bronson/vim-trailing-whitespace'
 Plugin 'cscope_macros.vim'
 
+"Plugin 'klen/python-mode'
+
 " Colorschemes
 Plugin 'morhetz/gruvbox'
 Plugin 'w0ng/vim-hybrid'
