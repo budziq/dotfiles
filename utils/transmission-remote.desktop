@@ -1,0 +1,14 @@
+#place it in /usr/share/applications and install transmission-cli
+[Desktop Entry]
+Name=Transmission-remote
+GenericName=BitTorrent Magnet Script
+X-GNOME-FullName=Transmission Magnet Script
+Comment=Send magnets to remote
+Exec=transmission-remote odroid:9191 --auth $(cat "$HOME/.transmission_pass") -a %U
+Icon=transmission
+NoDisplay=true
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=x-scheme-handler/magnet;
+
