@@ -23,6 +23,8 @@ set backspace=indent,eol,start
 set formatoptions-=t
 :syntax on
 set encoding=utf-8
+" remove the <esc> key delay
+set timeoutlen=1000 ttimeoutlen=0
 
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
