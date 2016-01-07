@@ -1,6 +1,3 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/dotfiles/utils/oh-my-zsh
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -49,11 +46,8 @@ KEYTIMEOUT=1
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git python tmux)
 
-source "$ZSH/oh-my-zsh.sh"
-
 #force tmux to recognize 256 color terminal
 alias tmux="tmux -2"
-export DOTFILES="$HOME/dotfiles"
 
 
 precmd() {
@@ -97,3 +91,13 @@ alias err='w_color | e_color | f_color'
 if [[ -e ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+
+# Set path to the dotfiles repository if not already present
+DOTFILES=${DOTFILES-"$HOME/dotfiles"}
+
+# Path to your oh-my-zsh configuration.
+ZSH="$DOTFILES/utils/oh-my-zsh"
+# Path to oh-my-zsh custoizations
+ZSH_CUSTOM="$DOTFILES/setup/oh-my-zsh-custom"
+
+source "$ZSH/oh-my-zsh.sh"
