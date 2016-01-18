@@ -70,8 +70,11 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 fi
 
+# Set path to the dotfiles repository if not already present
+DOTFILES=${DOTFILES-"$HOME/dotfiles"}
+
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$DOTFILES/bin"
 
 # 't' the todo manager
 alias t='python ~/bin/t/t.py --task-dir ~/tasks --list tasks'
@@ -91,9 +94,6 @@ alias err='w_color | e_color | f_color'
 if [[ -e ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
-
-# Set path to the dotfiles repository if not already present
-DOTFILES=${DOTFILES-"$HOME/dotfiles"}
 
 # Path to your oh-my-zsh configuration.
 ZSH="$DOTFILES/utils/oh-my-zsh"
