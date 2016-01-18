@@ -58,6 +58,7 @@ Bundle 'tomtom/tcomment_vim'
 let g:NERDTreeDirArrows = 1
 Bundle 'scrooloose/syntastic'
 let g:syntastic_disabled_filetypes=['vim']
+let g:syntastic_python_python_exec = 'python3'
 Bundle 'octol/vim-cpp-enhanced-highlight'
 
 Bundle 'Valloric/MatchTagAlways'
