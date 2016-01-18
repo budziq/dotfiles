@@ -6,6 +6,7 @@
 #ZSH_THEME="blinks"
 #ZSH_THEME="agnoster"
 ZSH_THEME="dpoggi"
+#ZSH_THEME="lambda-bu"
 #ZSH_THEME="murilasso"
 setopt rmstarsilent
 # Example aliases
