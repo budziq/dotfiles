@@ -7,6 +7,6 @@
 # 
 # Alternatively copy lines below directly into your shell. 
 
-gconftool-2 -s -t string /apps/guake/style/background/color '#272728282222'
-gconftool-2 -s -t string /apps/guake/style/font/color '#f1f1ebebebeb'
-gconftool-2 -s -t string /apps/guake/style/font/palette '#484848483e3e:#dcdc25256666:#8f8fc0c02929:#d4d4c9c96e6e:#5555bcbccece:#93935858fefe:#5656b7b7a5a5:#acacadada1a1:#767671715e5e:#fafa27277272:#a7a7e2e22e2e:#e7e7dbdb7575:#6666d9d9eeee:#aeae8282ffff:#6666efefd5d5:#cfcfd0d0c2c2'
+gconftool-2 -s -t string /apps/guake/style/background/color '#1d1d1f1f2121'
+gconftool-2 -s -t string /apps/guake/style/font/color '#c5c5c8c8c6c6'
+gconftool-2 -s -t string /apps/guake/style/font/palette '#28282a2a2e2e:#a5a542424242:#8c8c94944040:#dede93935f5f:#5f5f81819d9d:#858567678f8f:#5e5e8d8d8787:#707078788080:#37373b3b4141:#cccc66666666:#b5b5bdbd6868:#f0f0c6c67474:#8181a2a2bebe:#b2b29494bbbb:#8a8abebeb7b7:#c5c5c8c8c6c6'
