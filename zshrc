@@ -49,12 +49,23 @@ plugins=(git python tmux)
 
 #force tmux to recognize 256 color terminal
 alias tmux="tmux -2"
-
+alias xc="xsel -ib"
+alias xp="xsel -ob"
 
 precmd() {
   if [[ -n "$TMUX" ]]; then
     tmux setenv "$(tmux display -p 'TMUX_PWD_#D')" "$PWD"
   fi
+}
+
+ch() {
+    local cheat_arg=$1
+    shift 1
+    cheat $cheat_arg | cl "$@"
+}
+
+chc() {
+    ch $@ | tee >(xc)
 }
 
 # work in a tmux session if tmux is installed
