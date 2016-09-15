@@ -5,6 +5,7 @@ set ignorecase
 set smartcase
 set nocompatible
 set mouse=a
+set ttyfast
 
 " no sounds please
 set noerrorbells
