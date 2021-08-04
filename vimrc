@@ -12,7 +12,6 @@ set noerrorbells
 set novisualbell
 
 set expandtab
-set textwidth=79
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -21,7 +20,7 @@ set smartindent
 " make backspace behave sanely
 set backspace=indent,eol,start
 " remove automatic insertion of newline
-set formatoptions-=t
+set formatoptions-=tc
 :syntax on
 set encoding=utf-8
 " remove the <esc> key delay
@@ -34,12 +33,9 @@ set noswapfile     "no swap files
 " {{{ vundle bundles
 " both required for vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
 "
@@ -49,26 +45,47 @@ Bundle 'tpope/vim-git'
 
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
-let g:airline_extensions = ['branch', 'syntastic', 'hunks']
+"let g:airline_extensions = ['branch', 'ale', 'hunks']
 
-Bundle 'scrooloose/syntastic'
-let g:syntastic_disabled_filetypes=['vim']
-let g:syntastic_python_python_exec = 'python3'
+Bundle 'scrooloose/nerdtree'
+Bundle 'w0rp/ale'
+let g:ale_linters = {'go': ['gometalinter']}
+"
+"Bundle 'scrooloose/syntastic'
+"let g:syntastic_disabled_filetypes=['vim']
+"let g:syntastic_python_python_exec = 'python3'
+"Bundle 'octol/vim-cpp-enhanced-highlight'
 
 Bundle 'Valloric/MatchTagAlways'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
+"Plugin 'racer-rust/vim-racer'
+let g:racer_experimental_completer = 1
+
+set hidden
+let g:racer_cmd = "/home/budziq/.cargo/bin/racer"
+
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_global_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_rust_src_path = $RUST_SRC_PATH
+let g:ycm_python_binary_path = '/usr/bin/env python3'
+
+Bundle 'rust-lang/rust.vim'
+Bundle 'cespare/vim-toml'
 
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'cscope_macros.vim'
+Bundle 'tpope/vim-dispatch'
+Bundle 'fatih/vim-go'
 
+set shellpipe=2>&1\|\ tee\ 
 
 " Colorschemes
-Bundle 'morhetz/gruvbox'
+"Bundle 'morhetz/gruvbox'
+Bundle 'rafi/awesome-vim-colorschemes'
 
+call vundle#end()
 filetype plugin indent on     " Required by Vundle
     "
     " Brief help
@@ -99,14 +116,12 @@ nnoremap <leader>Q :qall<CR>
 " Paste from clipboard
 map <leader>p "+gP
 
-" Netrw options
-map <leader>f :Lexplore<CR>
-let g:netrw_banner=0
-let g:netrw_sizestyle="H"
-let g:netrw_winsize=16
+" NERDTree options
+map <leader>f :NERDTreeToggle<CR>
+let NERDTreeWinSize=20
 
 " generate ctags for c++ code
-map <F6> :!ctags-exuberant -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
+map <F6> :!ctags -R --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 nmap <F5> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR>
   \:!cscope -b -i cscope.files -f cscope.out<CR>
   \:cs reset<CR>
@@ -138,12 +153,18 @@ set scrolloff=3
 set laststatus=2
 let b:ws_flags='i'
 
-:let python_highlight_all=1
-
-set t_Co=256
+let python_highlight_all=1
+let g:gruvbox_italic=0
+let g:gruvbox_contrast_dark='hard'
+"set t_Co=256
 set background=dark
 color gruvbox
+"color hybrid_material
+"color molokai
+set termguicolors
+highlight Comment gui=bold
 
+hi SpellBad cterm=underline
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
   set guifont=Meslo\ LG\ S\ for\ Powerline\ 9

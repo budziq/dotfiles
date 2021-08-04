@@ -88,11 +88,13 @@ fi
 print_status() {
 # Print the battery status
 if ((connected)); then
-  GRAPH="⚡"
+  #GRAPH="⚡"
+  GRAPH="+"
 fi
 
 if ((output_tmux)); then
   printf "%s%s%s%s" "$COLOR" "[$GRAPH$BATTERY_STATUS%]" "#[default]"
+  #echo "$COLOR[$BATTERY_STATUS%]#[default]"
 else
   printf "\e[0;%sm%s%s\e[m\n"  "$COLOR" "[$GRAPH$BATTERY_STATUS%]"
 fi
