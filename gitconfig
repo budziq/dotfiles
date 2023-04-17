@@ -1,6 +1,8 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore.global
+	compression = 0
+	autocrlf = false
 [color]
 	bransh = auto
 	diff = auto
@@ -8,8 +10,30 @@
 [merge]
 	tool = vimdiff
 [push]
-	default = simple
+	default = current
 [diff]
     tool = meld
 [include]
     path = ~/.gitconfig.local
+#[url "ssh://m.budzynski@wawsrvbuild49:29418"]
+#	insteadOf = https://rats.srpol
+#[url "git@github.sec.samsung.net:"]
+#	insteadOf = https://github.sec.samsung.net/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[log]
+    decorate = full
+[alias]
+	graph = log  --graph  --decorate --oneline
+    hist = log --pretty=format:'%h | %s%C(auto)%d [%an %cr]%C(reset)' --graph --date=short
+    dog = log --graph --oneline --all
+[user]
+	name = Michał Budzyński
+	email = m.budzynski@samsung.com
+[http]
+	followRedirects = true
+[rebase]
+	instructionFormat = %s

@@ -100,7 +100,7 @@ alias target="ssh root@192.168.129.3"
 alias usb="sudo ifdown usb0 && sudo ifup usb0"
 alias tlogin="sudo ifdown usb0 && sudo ifup usb0 && ssh root@192.168.129.3"
 alias fff='find ./ -type f -print0 | xargs -0 grep -l'
-alias rights='git log -p --no-color --after=`date +%Y.%m.01 -d "this month"` --before=`date +%Y.%m.01 -d "next month"` --author="budzynski"'
+alias rights='git log -p --no-color --after=`date +%Y.%m.01 -d "this month"` --before=`date +%Y.%m.01 -d "next month"` --author="budzynski" --author="Budzynski" --author="Budzyński"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -117,3 +117,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
