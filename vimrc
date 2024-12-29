@@ -48,8 +48,21 @@ let g:airline_powerline_fonts = 1
 "let g:airline_extensions = ['branch', 'ale', 'hunks']
 
 Bundle 'scrooloose/nerdtree'
-Bundle 'w0rp/ale'
-let g:ale_linters = {'go': ['gometalinter']}
+
+
+Plugin 'dense-analysis/ale'
+"Plugin 'budziq/ale'
+let g:ale_linters = {
+\   'javascript': ['eslint', 'jshint'],
+\    'rust': ['rustc', 'cargo', 'rls'],
+\}
+let g:ale_rust_cargo_use_check = 1
+let g:ale_rust_cargo_check_tests = 1
+let g:ale_rust_cargo_check_examples = 1
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+"let g:ale_open_list = 1
 "
 "Bundle 'scrooloose/syntastic'
 "let g:syntastic_disabled_filetypes=['vim']
@@ -57,7 +70,7 @@ let g:ale_linters = {'go': ['gometalinter']}
 "Bundle 'octol/vim-cpp-enhanced-highlight'
 
 Bundle 'Valloric/MatchTagAlways'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 "Plugin 'racer-rust/vim-racer'
 let g:racer_experimental_completer = 1
 
@@ -78,6 +91,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'cscope_macros.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'fatih/vim-go'
+Bundle 'iamcco/markdown-preview.nvim'
 
 set shellpipe=2>&1\|\ tee\ 
 
@@ -156,18 +170,18 @@ let b:ws_flags='i'
 let python_highlight_all=1
 let g:gruvbox_italic=0
 let g:gruvbox_contrast_dark='hard'
-"set t_Co=256
+set t_Co=256
 set background=dark
 color gruvbox
 "color hybrid_material
 "color molokai
-set termguicolors
+"set termguicolors
 highlight Comment gui=bold
 
 hi SpellBad cterm=underline
 "setting appropriate color-scheme depending on gui or not
 if has("gui_running")
-  set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
+  set guifont=JetBrainsMonoNL\ Nerd\ Font\ 12
   set guioptions-=T
   set spell
   set lines=40

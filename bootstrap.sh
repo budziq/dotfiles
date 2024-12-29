@@ -30,11 +30,11 @@ require_apt git
 #require_apt not_exist
 bot "seting-up python pip..."
     #run cat /etc/shadow
-    srun easy_install pip
+    #srun easy_install pip
 bot "installing python pip packages..."
-    require_pip pep8
-    require_pip nose
-    require_pip virtualenv
+    #require_pip pep8
+    #require_pip nose
+    #require_pip virtualenv
 bot "misc package setup..."
 # setup guake colors and settings
 #./local.sh
@@ -42,19 +42,19 @@ bot "misc package setup..."
 pushd ~ > /dev/null 2>&1
 
 bot "creating symlinks for project dotfiles..."
-symlinkifne .crontab
+#symlinkifne .crontab
 #symlinkifne .gemrc
-#symlinkifne .gitconfig
-#symlinkifne .gitignore
-#symlinkifne .profile
+symlinkifne .gitconfig
+symlinkifne .gitignore
+symlinkifne .profile
 #symlinkifne .rvmrc
-#symlinkifne .screenrc
-#symlinkifne .vim
-#symlinkifne .vimrc
+symlinkifne .screenrc
+symlinkifne .vim
+symlinkifne .vimrc
 #symlinkifne .zlogout
 #symlinkifne .zprofile
 #symlinkifne .zshenv
-#symlinkifne .zshrc
+symlinkifne .zshrc
 #symlinkifne .dircolors
 
 popd > /dev/null 2>&1

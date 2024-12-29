@@ -12,6 +12,8 @@ setopt rmstarsilent
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nv="nvim"
+alias fd="fdfind"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -49,6 +51,7 @@ plugins=(git python tmux)
 
 #force tmux to recognize 256 color terminal
 alias tmux="tmux -2"
+#alias tmux="TERM=screen-256color-bce tmux"
 alias xc="xsel -ib"
 alias xp="xsel -ob"
 
@@ -113,3 +116,5 @@ ZSH="$DOTFILES/utils/oh-my-zsh"
 ZSH_CUSTOM="$DOTFILES/setup/oh-my-zsh-custom"
 
 source "$ZSH/oh-my-zsh.sh"
+
+#eval "$(atuin init zsh)"
